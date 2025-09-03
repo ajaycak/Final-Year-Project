@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crop Yield Prediction</title>
+  <link rel="icon" type="image/x-icon" href="static\images\logo.png" style="border-radius: 15%">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="static/style.css">
+  <script src="static/darkmode.js"></script>
+  <script src="static/validate.js"></script>
+
+</head>
+
+<body>
+  <header>
+    <div>
+      <nav>
+        <div class="logo">
+          <a href="#">
+            <img src="static\images\logo.png">
+            <span id="span1">Crop <span id="span2">Master</span></span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#Yield-Prediction">Yield Prediction</a></li>
+          <li><a href="#About">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<section id="Home">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="static\images\image1.jpg" alt="image1" style="width:100%;" class="wallpaper">
+        <div class="text-overlay">
+          <h2>Importance of Crop Yield</h2>
+          <p>Crop cultivation is essential worldwide, providing food, livelihoods, and economic stability.
+            It sustains populations, supports rural communities, and drives global trade.
+            In nations like India, agriculture is crucial for livelihoods, yet it contributes only 14% to the GDP.
+            Leveraging data and analytics can optimize farming, increasing efficiency and profitability.
+            Thus, it is of due importance to get an estimate of the cultivation before employing all
+            the resources to the task.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="static\images\image2.jpg" alt="image2" style="width:100%;" class="wallpaper">
+        <div class="text-overlay">
+          <h2>Optimizing Yield Prediction</h2>
+          <p>To optimize crop yield prediction, we can integrate advanced technologies like machine learning and deep learning
+            for precise data collection and analysis. Incorporate historical data, weather forecasts, and soil information
+            for accurate modeling and continuous refinement through feedback loops enhances predictions,
+            enabling proactive farming strategies and sustainable agricultural practices.</p>
+        </div>
+      </div>
+    
+      <div class="item">
+        <img src="static\images\image3.png" alt="image3" style="width:100%;" class="wallpaper">
+        <div class="text-overlay">
+          <h2>Benefits of better yield</h2>
+          <p>By accurately estimating yields, farmers can optimize planting decisions, manage resources effectively,
+            and mitigate risks associated with fluctuating market demands and environmental conditions.
+            Yield predictions enable policymakers, researchers, and stakeholders to make informed decisions,
+            fostering sustainable agricultural practices and enhancing global food production efficiency.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</section>
+<br>
+
+<section id="Yield-Prediction">
+  <span id="topic">Crop Yield Prediction</span><br><br>
+  <div id="container">
+    <form action="/predict" method="post" onsubmit="return validation()">
+  <table>
+    <tr>
+      <td class="left"><label for="Country">Country :</label></td>
+      <td><input type="text" id="Country" name="Country"></td>
+    </tr>
+    <tr>
+      <td></td> <!-- Empty cell to maintain alignment -->
+      <td><p id="Country-status" style="color: red"></p></td>
+    </tr>
+    <tr>
+      <td class="left"><label for="Crop">Crop name :</label></td>
+      <td><input list="Crop" name="Crop">
+        <datalist id="Crop">
+          <option value="Maize">
+          <option value="Potatoes">
+          <option value="Rice, paddy">
+          <option value="Sorghum">
+          <option value="Soybeans">
+          <option value="Wheat">
+          <option value="Cassava">
+          <option value="Sweet potatoes">
+          <option value="Yams">
+          <option value="Others">
+        </datalist></td>
+    </tr>
+    <tr>
+      <td class="left"><label for="Rainfall">Rainfall (in mm) :</label></td>
+      <td><input type="number" id="Rainfall" name="Rainfall" step="any"></td>
+    </tr>
+    <tr>
+      <td class="left"><label for="Pesticides">Pesticides (in tonnes) :</label></td>
+      <td><input type="number" id="Pesticides" name="Pesticides" step="any"></td>
+    </tr> 
+    <tr>
+      <td class="left"><label for="Temperature">Temperature (in Celsius) :</label></td>
+      <td><input type="number" id="Temperature" name="Temperature" step="any"></td>
+    </tr>
+    <tr>
+      <td class="left"><label for="Year">Year :</label></td>
+      <td><input type="number" id="Year" name="Year"></td>
+    </tr>
+    <tr>
+      <td></td> <!-- Empty cell to maintain alignment -->
+      <td><p id="Empty-status" style="color: red"></p></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align:center;"><input type="submit" value="Predict" id="button"></td>
+    </tr>
+  </table>
+</form>
+
+    <div id="Prediction">
+      {% if prediction %}
+        <p>Yield (hectogram per hectare) is {{prediction|float|round(2)}}</p>
+        <div id="Suggestions">
+        Given the estimated yield, here are some of the suggestions to improve the yield  in future years.
+        <ul>
+          <li>Improve irrigation system.</li>
+          <li>Increase crop rotation frequency.</li>
+          <li>Use fertilizers more frequently.</li>
+          <li>Try to cultivate the crops which are prominent in the region, for maximum yield.</li>
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+<br>
+
+<section id="About">
+  <h3>About the project</h3>
+  <div id="AboutContent">
+    <div id="info">
+      This project suggests using
+      deep learning and machine learning techniques to forecast
+      crop yield throughout India and the world, where nearly half of the
+      population depends on agriculture for a living. The study
+      trains the models using a variety of input variables,
+      including weather information, soil characteristics and crop
+      character traits. The findings demonstrate that models based
+      on machine learning and deep learning are effective at
+      accurately predicting crop yield. Intelligent choices about
+      crop production and management can be made using the
+      proposed approach by farmers and policymakers. Using
+      stacked ensemble models of Random Forest, Gradient
+      Boosting, Bagging regressor and RNN as the meta-learner
+      layer, the project evaluates crop yield.
+    </div>
+    <div id="image">
+      <img src="static\images\image4.png">
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
