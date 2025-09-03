@@ -1,0 +1,202 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+header {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+}
+body {
+  background-color: black;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5% 5%;
+  margin: 1% 5%;
+  background-color: black;
+}
+
+.logo {
+  color: white;
+  align-items: center;
+  display: inline-flex;
+  font-weight: bold;
+}
+#span2 {
+  color: #5ccd0b;
+}
+.logo a {
+  font-size: 28px;
+  text-decoration: none;
+  color: white;
+}
+.logo img {
+  height: 30px;
+  width: 30px;
+  border-radius: 15%;
+}
+
+nav ul {
+  display: inline;
+  overflow: auto;
+}
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+nav ul li a:hover {
+  color: #5ccd0b;
+  transition: 3ms;
+  text-decoration: none;
+}
+
+section {
+  margin: 2% 8%;
+}
+
+.wallpaper {
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 1) 100%);
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 100%);
+}
+
+.container {
+  position: relative;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-weight: bold;
+}
+
+.text-overlay h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: black;
+}
+
+.text-overlay p {
+  font-size: 18px;
+  margin: 0;
+  color: white;
+}
+
+.carousel-inner img {
+  box-shadow: 0 0 8px 8px white inset;
+}
+
+#Yield-Prediction {
+  text-align: center;
+  color: white;
+}
+#container {
+  position: relative;
+  width: 50%;
+  margin-left: 25%;
+  text-align: center;
+}
+#topic {
+  font-size: 30px;
+  font-weight: bold;
+}
+form {
+  position: relative;
+  text-align: center;
+  justify-content: center;
+}
+table {
+  width: 100%;
+}
+table td {
+  padding: 5px 5px 5px 20px;
+  text-align: left;
+}
+.left {
+  text-align: right;
+  width: 50%;
+  padding-right: 20px;
+}
+label {
+  padding: 3%;
+  font-size: 16px;
+  color: #5ccd0b;
+}
+input {
+  color: black;
+  padding: 2%;
+  border-radius: 6px;
+  font-weight: bold;
+}
+#button {
+  background-color: white;
+  border: none;
+  color: #5ccd0b;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 2px 2px #5ccd0b;
+}
+#button:hover {
+  border: 1px solid #5ccd0b;
+}
+#Prediction {
+  font-size: 20px;
+  font-weight: bold;
+  color: #5ccd0b;
+}
+#Suggestions {
+  font-size: 15px;
+  font-style: italic;
+  text-align: left;
+  color: white
+}
+
+#About h3 {
+  font-weight: bold;
+  color: #5ccd0b;
+}
+#AboutContent {
+  display: flex;
+  overflow: auto;
+}
+#info {
+  width: 60%;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: justify;
+  color: white;
+}
+#image {
+  width: 40%;
+  align-items: right;
+  padding-left: 10%;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
